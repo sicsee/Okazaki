@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #ffd700;
+  --color-goldC: #ffcc00;
+  --color-goldE: #b8860b;
+  --color-goldM: #d4af37;
+  --color-goldCS: #f1c27d;
+  --color-dark: #191a23;
+
+  --default-font-family: "Poppins", sans-serif;
+  --font-play: "Playfair", serif;
+  --font-jett: "JetBrains Mono", monospace;
+}
+
+@layer components {
+  .btn {
+    @apply bg-green-700 px-6 py-2 text-white rounded-lg hover:bg-green-800 transition-all ease-linear hover:scale-102 hover:cursor-pointer;
+  }
+  .card {
+    @apply w-80 h-75 border-green-800 rounded-xl flex flex-col p-5 items-center space-y-3.5;
+  }
+
+  .cardSobre {
+    @apply w-110 h-60 rounded-3xl border-black border border-b-4 overflow-hidden p-5 flex;
+  }
+
+  .tituloCard {
+    @apply rounded-md text-left px-2 font-jett font-medium text-2xl w-fit;
+  }
+}
