@@ -7,7 +7,6 @@ const Footer = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "servicos", "sobre", "contato"];
-      const scrollPosition = window.scrollY;
 
       sections.forEach((section) => {
         const element = document.getElementById(section);

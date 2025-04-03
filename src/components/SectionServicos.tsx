@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 const SectionHome = () => {
-  const [isVisible, setIsVisible] = useState(false);
+  const [, setIsVisible] = useState(false);
   const [servicesVisible, setServicesVisible] = useState(false);
 
   useEffect(() => {
