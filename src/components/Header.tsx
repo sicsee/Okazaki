@@ -1,20 +1,9 @@
 import "remixicon/fonts/remixicon.css";
 import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
-  const { hash } = useLocation();
-  const [activeSection, setActiveSection] = useState(hash);
+  const [activeSection, setActiveSection] = useState("#home");
 
-  useEffect(() => {
-    if (hash) {
-      document.getElementById(hash.replace("#", ""))?.scrollIntoView({
-        behavior: "smooth",
-      });
-    }
-  }, [hash]);
-
-  // Monitorar o scroll para determinar a seção ativa
   useEffect(() => {
     const handleScroll = () => {
       const sections = ["home", "servicos", "sobre", "contato"];
@@ -32,7 +21,6 @@ const Header = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -47,8 +35,8 @@ const Header = () => {
         </h1>
       </div>
       <nav className="flex items-center gap-6">
-        <Link
-          to="#home"
+        <a
+          href="#home"
           className={`relative px-3 py-1 transition-all ${
             activeSection === "#home"
               ? "text-green-700"
@@ -59,10 +47,10 @@ const Header = () => {
           {activeSection === "#home" && (
             <span className="absolute left-0 bottom-0 w-full h-[3px] bg-green-700 transition-all" />
           )}
-        </Link>
+        </a>
 
-        <Link
-          to="#servicos"
+        <a
+          href="#servicos"
           className={`relative px-3 py-1 transition-all ${
             activeSection === "#servicos"
               ? "text-green-700"
@@ -73,10 +61,10 @@ const Header = () => {
           {activeSection === "#servicos" && (
             <span className="absolute left-0 bottom-0 w-full h-[3px] bg-green-700 transition-all" />
           )}
-        </Link>
+        </a>
 
-        <Link
-          to="#sobre"
+        <a
+          href="#sobre"
           className={`relative px-3 py-1 transition-all ${
             activeSection === "#sobre"
               ? "text-green-700"
@@ -87,10 +75,10 @@ const Header = () => {
           {activeSection === "#sobre" && (
             <span className="absolute left-0 bottom-0 w-full h-[3px] bg-green-700 transition-all" />
           )}
-        </Link>
+        </a>
 
-        <Link
-          to="#contato"
+        <a
+          href="#contato"
           className={`relative px-3 py-1 transition-all ${
             activeSection === "#contato"
               ? "text-green-700"
@@ -101,7 +89,7 @@ const Header = () => {
           {activeSection === "#contato" && (
             <span className="absolute left-0 bottom-0 w-full h-[3px] bg-green-700 transition-all" />
           )}
-        </Link>
+        </a>
       </nav>
 
       <div>
