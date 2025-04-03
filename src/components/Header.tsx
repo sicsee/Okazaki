@@ -1,7 +1,7 @@
 import "remixicon/fonts/remixicon.css";
 import { useEffect, useState } from "react";
 
-const Header = () => {
+const Footer = () => {
   const [activeSection, setActiveSection] = useState("#home");
 
   useEffect(() => {
@@ -101,4 +101,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Footer;

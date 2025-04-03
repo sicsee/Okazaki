@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "emailjs-com";
 
 const SectionContato: React.FC = () => {
   const [selectedOption, setSelectedOption] = useState("sayHi");
   const [isVisible, setIsVisible] = useState(false);
+  const [message, setMessage] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +18,26 @@ const SectionContato: React.FC = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.target as HTMLFormElement;
+
+    emailjs
+      .sendForm(
+        "service_8mjp58f",
+        "template_3lrz5tl",
+        form,
+        "AONFFeo19T-t1SBdP"
+      )
+      .then(() => {
+        setMessage("Mensagem enviada com sucesso!");
+        form.reset();
+      })
+      .catch(() => setMessage("Erro ao enviar a mensagem."));
+
+    setTimeout(() => setMessage(""), 5000);
+  };
 
   return (
     <motion.section
@@ -70,13 +92,15 @@ const SectionContato: React.FC = () => {
             </label>
           </div>
 
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={sendEmail}>
             <label className="block">
               <span>Nome</span>
               <input
                 type="text"
+                name="name"
                 className="w-full border rounded p-2"
                 placeholder="Nome"
+                required
               />
             </label>
 
@@ -86,6 +110,7 @@ const SectionContato: React.FC = () => {
                   <span>Email*</span>
                   <input
                     type="email"
+                    name="email"
                     className="w-full border rounded p-2"
                     placeholder="Email"
                     required
@@ -94,6 +119,7 @@ const SectionContato: React.FC = () => {
                 <label className="block">
                   <span>Mensagem*</span>
                   <textarea
+                    name="message"
                     className="w-full border rounded p-2"
                     placeholder="Mensagem"
                     required
@@ -104,6 +130,7 @@ const SectionContato: React.FC = () => {
               <label className="block">
                 <span>Pergunta*</span>
                 <textarea
+                  name="message"
                   className="w-full border rounded p-2"
                   placeholder="Digite sua pergunta..."
                   required
@@ -118,6 +145,10 @@ const SectionContato: React.FC = () => {
               Enviar Mensagem
             </button>
           </form>
+
+          {message && (
+            <p className="text-center mt-4 text-green-500">{message}</p>
+          )}
         </div>
         <motion.div
           className="relative flex justify-end items-center w-1/2 h-full"

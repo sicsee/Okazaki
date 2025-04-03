@@ -3,6 +3,7 @@ import SectionHome from "./components/SectionHome";
 import SectionSobre from "./components/SectionSobre";
 import SectionContato from "./components/SectionContato";
 import SectionServicos from "./components/SectionServicos";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
       <SectionServicos />
       <SectionSobre />
       <SectionContato />
+      <Footer />
     </div>
   );
 };

@@ -5,12 +5,14 @@ const SectionHome = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const section = document.getElementById("home");
+      const section = document.getElementById("home"); // Ajuste para o ID correto da seção
       if (section) {
         const rect = section.getBoundingClientRect();
-        setIsVisible(rect.top < window.innerHeight * 0.85);
+        setIsVisible(rect.top < window.innerHeight * 0.75);
       }
     };
+
+    handleScroll(); // Chama a função logo ao carregar a página
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
