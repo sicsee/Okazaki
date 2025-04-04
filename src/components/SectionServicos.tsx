@@ -43,7 +43,7 @@ const SectionHome = () => {
           preventivo e personalizado.
         </p>
         <div className="flex mb-5 gap-5 border-2 border-green-800 rounded-xl items-center">
-          <div className="card p-4 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
+          <div className="card p-4 rounded-lg transform transition-all duration-500 ease-in-out ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
             <div className="bg-green-700 p-3 rounded-full inline-block mb-4">
               <i className="ri-dna-fill text-white text-4xl"></i>
             </div>
@@ -56,7 +56,7 @@ const SectionHome = () => {
             </div>
           </div>
           <span className="w-[2px] h-60 bg-green-800 items-center"></span>
-          <div className="card p-4 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out delay-100 ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
+          <div className="card p-4 rounded-lg transform transition-all duration-500 ease-in-out delay-100 ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
             <div className="bg-green-700 p-3 rounded-full inline-block mb-4">
               <i className="ri-microscope-fill text-white text-4xl"></i>
             </div>
@@ -69,7 +69,7 @@ const SectionHome = () => {
             </div>
           </div>
           <span className="w-[2px] h-60 bg-green-800 items-center"></span>
-          <div className="card p-4 rounded-lg shadow-lg transform transition-all duration-500 ease-in-out delay-200 ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
+          <div className="card p-4 rounded-lg transform transition-all duration-500 ease-in-out delay-200 ${servicesVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'}">
             <div className="bg-green-700 p-3 rounded-full inline-block mb-4">
               <i className="ri-syringe-fill text-white text-4xl"></i>
             </div>
@@ -82,7 +82,7 @@ const SectionHome = () => {
             </div>
           </div>
         </div>
-        <button className="btn w-50 h-30 animate-bounce delay-500">
+        <button className="btn w-fit animate-bounce delay-500 px-10 ">
           Saiba Mais
         </button>
       </section>
