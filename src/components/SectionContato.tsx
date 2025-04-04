@@ -45,19 +45,20 @@ const SectionContato: React.FC = () => {
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: isVisible ? 1 : 0, y: isVisible ? 0 : 50 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="flex flex-col h-screen px-30"
+      className="flex flex-col min-h-screen px-6 md:px-20 py-10"
     >
       <div className="font-Jett text-3xl font-medium text-black bg-gray-200 w-fit px-4 rounded-xl mb-5">
         <h1>Contate-nos</h1>
       </div>
+
       <motion.div
-        className="w-full rounded-xl h-130 bg-gray-200 p-10 flex"
+        className="w-full rounded-xl bg-gray-200 p-6 md:p-10 flex flex-col md:flex-row gap-8"
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: isVisible ? 1 : 0, scale: isVisible ? 1 : 0.9 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        <div className="w-1/2 flex flex-col justify-center h-full">
-          <div className="flex items-center gap-4 mb-10">
+        <div className="w-full md:w-1/2 flex flex-col justify-center">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-10">
             <label className="flex items-center gap-2 cursor-pointer">
               <input
                 type="radio"
@@ -150,8 +151,9 @@ const SectionContato: React.FC = () => {
             <p className="text-center mt-4 text-green-500">{message}</p>
           )}
         </div>
+
         <motion.div
-          className="relative flex justify-end items-center w-1/2 h-full"
+          className="relative flex justify-center items-center w-full md:w-1/2"
           initial={{ opacity: 0, x: 50 }}
           animate={{ opacity: isVisible ? 1 : 0, x: isVisible ? 0 : 50 }}
           transition={{ duration: 0.6, ease: "easeOut" }}

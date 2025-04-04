@@ -16,18 +16,14 @@ const SectionSobre = () => {
   }, []);
 
   return (
-    <section id="sobre" className="relative flex px-10 h-screen items-center">
-      <div className="relative flex justify-center items-center mr-20">
-        <div>
-          <img src="./images/pana.svg" alt="Mobile Img" />
-        </div>
-      </div>
-      <div
-        className={`flex flex-col w-1/2 space-y-6 transform transition-all duration-1000 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
-        }`}
-      >
-        <h1 className="text-5xl text-green-800 font-play font-bold text-center">
+    <section
+      id="sobre"
+      className={`flex flex-col md:flex-row items-center justify-center px-6 md:px-16 py-20 min-h-screen transition-all duration-1000 ${
+        isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+      }`}
+    >
+      <div className="w-full md:w-1/2 flex flex-col space-y-6 text-center md:text-left">
+        <h1 className="text-4xl md:text-5xl text-green-800 font-play font-bold">
           Sobre Nós
         </h1>
         <p className="text-justify">
@@ -36,7 +32,7 @@ const SectionSobre = () => {
           Nosso compromisso é proporcionar insights genéticos que ajudam na
           prevenção e no cuidado personalizado com a saúde.
         </p>
-        <h1 className="text-5xl text-green-800 font-play font-bold text-center">
+        <h1 className="text-4xl md:text-5xl text-green-800 font-play font-bold">
           Nossa Missão
         </h1>
         <p className="text-justify">
@@ -44,6 +40,14 @@ const SectionSobre = () => {
           mais saudável. Trabalhamos com ética e inovação para garantir
           segurança, precisão e privacidade em cada análise realizada.
         </p>
+      </div>
+
+      <div className="w-full md:w-1/2 flex justify-center mb-10 md:mb-0">
+        <img
+          src="./images/pana.svg"
+          alt="Mobile Img"
+          className="max-w-[300px] md:max-w-[450px] h-auto drop-shadow-md"
+        />
       </div>
     </section>
   );
