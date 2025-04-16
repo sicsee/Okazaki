@@ -1,22 +1,18 @@
-import Header from "./components/Header";
-import SectionHome from "./components/SectionHome";
-import SectionSobre from "./components/SectionSobre";
-import SectionContato from "./components/SectionContato";
-import SectionServicos from "./components/SectionServicos";
-import Footer from "./components/Footer";
-import { Analytics } from "@vercel/analytics/react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import ServicosPage from "./pages/Servicos";
+import SaibaMaisPage from "./pages/SaibaMais";
+
 
 const App = () => {
   return (
-    <div>
-      <Header />
-      <SectionHome />
-      <SectionServicos />
-      <SectionSobre />
-      <SectionContato />
-      <Footer />
-      <Analytics />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/servicos" element={<ServicosPage />} />
+        <Route path="/saibamais" element={<SaibaMaisPage />} />
+      </Routes>
+    </>
   );
 };
 
